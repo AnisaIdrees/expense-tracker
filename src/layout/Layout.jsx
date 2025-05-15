@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 function Layout() {
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-[ #3b3535]">
             <SideBar />
 
             <div className={`

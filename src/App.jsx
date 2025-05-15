@@ -16,6 +16,7 @@
 import React from 'react';
 import Content from './components/Content';
 import Routes from './routing/Routes';
+import './app.css'
 
 function App() {
 
