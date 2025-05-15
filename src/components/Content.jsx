@@ -1,19 +1,17 @@
-import React,{useState} from 'react'
-import SideBar from './SideBar';
+import React from 'react'
+import SideBar from './SideBar'
 
 function Content() {
-      const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <>
-    <SideBar/>
-      <div className={`p-4 ${sidebarOpen ? 'sm:ml-64' : ''}`}>
+    <div className="main-dashboard-container flex">
+      <SideBar />
+      <div className="content  flex-1 ml-64 p-4 min-h-screen bg-green-200">
 
-        <div className="p-4  border-2  border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
-          {/* Content */}
+        <div className="box">
+
         </div>
-        
       </div>
-    </>
+    </div>
   )
 }
 

@@ -15,6 +15,7 @@
 
 import React from 'react';
 import Content from './components/Content';
+import Routes from './routing/Routes';
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
   return (
     <>
 
-      <Content />
+      {/* <Content /> */}
+      <Routes/>
 
     </>
   );
