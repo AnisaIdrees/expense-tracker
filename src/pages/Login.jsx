@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { auth, signInWithEmailAndPassword } from '../config/firebase.config'
 
 function Login() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -9,11 +13,25 @@ function Login() {
 
   const { email, password } = formData;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
-    alert("Form submitted!");
+
+    try {
+      const login = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      toast.success('Login successful!')
+      setTimeout(() => {
+        navigate('/')
+      }, "5000")
+    }
+    catch (error) {
+      toast.error(`Error: ${error.message}`)
+    }
   };
 
   const handleChange = (e) => {
@@ -60,11 +78,12 @@ function Login() {
           </button>
         </form>
         <p className="text-sm text-center text-white">
-          Don’t have an account? <Link 
-          to={'/signup'}
-          className="text-[aqua] hover:underline">Sign up</Link>
+          Don’t have an account? <Link
+            to={'/signup'}
+            className="text-[aqua] hover:underline">Sign up</Link>
         </p>
       </div>
+      <ToastContainer position="top-center" theme='dark' />
     </div>
   );
 }

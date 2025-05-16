@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {auth,createUserWithEmailAndPassword ,signInWithEmailAndPassword  } from '../config/firebase.config'
+import { Link, useNavigate } from 'react-router-dom';
+import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '../config/firebase.config'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,21 +14,27 @@ function Signup() {
 
   const { name, email, password } = formData;
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
-try {
-let register=await  createUserWithEmailAndPassword(auth, email, password)
-console.log('register >>>>>>>.',register);
 
-} catch (error) {
-  console.log(error);
-  
-}
+    try {
+      let register = await createUserWithEmailAndPassword(auth, email, password)
+      console.log('register >>>>>>>.', register);
+      toast.success('Signup successful!')
+      setTimeout(() => {
+        navigate('/login')
+      }, "5000")
+    }
 
-    alert("Signup form submitted!");
+    catch (error) {
+      console.log(error);
+      toast.error(`Error: ${error.message}`)
+    }
+
+
   };
 
   const handleChange = (e) => {
@@ -91,6 +100,7 @@ console.log('register >>>>>>>.',register);
             className="text-[aqua] hover:underline">Login</Link>
         </p>
       </div>
+      <ToastContainer position="top-center" theme='dark' />
     </div>
   );
 }
