@@ -12,7 +12,12 @@ function BarChart() {
     // exportFileName: "New Year Resolutions",
     // exportEnabled: true,
     title: {
-      text: "Top Categories of New Year's Resolution"
+       text: "My Expense",
+  fontSize: 24,
+  fontColor: "#f5f5f4",
+  fontFamily: "Arial",
+  horizontalAlign: "left", 
+  padding: 10,
     },
     data: [{
       type: "pie",
@@ -33,13 +38,14 @@ function BarChart() {
   };
 
   return (
-    <div>
-
-       <CanvasJSChart className=" p-7"options={options} 
+   <>
+<div className="wrap  w-[450px] mx-auto ">
+       <CanvasJSChart className=" mt-7"options={options} 
         /* onRef={ref => this.chart = ref} */
       />
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 export default BarChart

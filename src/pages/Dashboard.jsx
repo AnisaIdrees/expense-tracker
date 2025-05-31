@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 import Card from "../components/Card";
-import GraphCard from "../components/GraphCard";
+import BarChart from "../components/BarChart";
 
 function Dashboard() {
   const { currentUser } = useAuth();
@@ -15,9 +15,10 @@ function Dashboard() {
           <Card text={"Expense"} number={0.0} />
         </div>
 
-<div className="graph-container flex justify-center items-center gap-6 flex-wrap mt-11">
-       <GraphCard /> 
-       <GraphCard/>
+<div className=" bg-aqua-900 graph-container flex justify-center items-center gap-3 flex-wrap p-3">
+ <BarChart/>
+ <BarChart/>
+
 </div>
  
       </div>
