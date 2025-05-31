@@ -32,7 +32,7 @@ function SideBar() {
 
             {/* Sidebar */}
             <div className={` sidebar 
-                fixed top-0 left-0 h-full w-63 bg-[#303232] p-9
+                fixed top-0 left-0 h-full w-64 bg-[#303232] p-9
                 transform transition-all duration-1000 ease-in-out z-40
                 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
                 shadow-xl
@@ -56,7 +56,7 @@ function SideBar() {
                                 <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
                                 <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                             </svg>
-                            <span className="ms-3  isActive{}">Dashboard</span>
+                            <span className="ms-3 group-hover:text-aqua-600 dark:group-hover:text-aqua-400 isActive{}">Dashboard</span>
                         </NavLink>
                     </li>
 

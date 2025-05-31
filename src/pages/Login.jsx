@@ -40,7 +40,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 over">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 over overflow-hidden">
       <div className="w-full max-w-md p-8 space-y-6 bg-[#1e1e1e] rounded-2xl shadow-lg">
         <h2 className="text-[26px] font-bold text-center text-white">
           <span className="text-[aqua]">Login</span> to Your Account
@@ -54,7 +54,7 @@ function Login() {
               required
               value={email}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-transparent text-white placeholder-gray-500 border border-white rounded-md focus:outline-none focus:ring-1 focus:ring-[aqua] focus:border-[aqua] transition"
+              className="w-full px-4 py-2 bg-[transparent] text-white placeholder-gray-500 border border-white rounded-md focus:outline-none focus:ring-1 focus:ring-[aqua] focus:border-[aqua] transition"
               placeholder="you@example.com"
             />
           </div>
@@ -66,7 +66,7 @@ function Login() {
               required
               value={password}
               onChange={handleChange}
-              className="w-full px-4 py-2 bg-transparent text-white placeholder-gray-500 border border-white rounded-md focus:outline-none focus:ring-1 focus:ring-[aqua] focus:border-[aqua] transition"
+              className="w-full px-4 py-2 bg-[transparent] text-white placeholder-gray-500 border border-white rounded-md focus:outline-none focus:ring-1 focus:ring-[aqua] focus:border-[aqua] transition"
               placeholder="••••••••"
             />
           </div>

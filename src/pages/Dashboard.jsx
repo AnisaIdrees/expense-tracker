@@ -1,19 +1,27 @@
-import React from 'react';
-import { useAuth } from '../context/AuthContext';
-
+import React from "react";
+import { useAuth } from "../context/AuthContext";
+import Card from "../components/Card";
+import GraphCard from "../components/GraphCard";
 
 function Dashboard() {
-  const {currentUser}=useAuth()
+  const { currentUser } = useAuth();
   return (
-<>
+    <>
+      <div className="dashboard-container h-screen ">
 
- {currentUser ? (
-        <p>Welcome, {currentUser.email}</p>
-      ) : (
-        <p>Please login</p>
-      )}
+        <div className="balance-box w-[100%]  mx-auto flex justify-center items-center gap-8 p-3 mt-4 flex-wrap">
+          <Card text={"Current Balance"} number={0.0} />
+          <Card text={"Total Balance"} number={0.0} />
+          <Card text={"Expense"} number={0.0} />
+        </div>
 
-</>
+<div className="graph-container flex justify-center items-center gap-6 flex-wrap mt-11">
+       <GraphCard /> 
+       <GraphCard/>
+</div>
+ 
+      </div>
+    </>
   );
 }
 
