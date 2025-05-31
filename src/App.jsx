@@ -1,17 +1,13 @@
-import React from 'react';
-import Routes from './routing/Routes';
-import './App.css'
+import React from "react";
+import Routes from "./routing/Routes";
+import "./App.css";
+import { AuthProvider} from "./context/AuthContext";
 
 function App() {
-
-
   return (
-    <>
-
-      {/* <Content /> */}
-      <Routes/>
-
-    </>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
 }
 

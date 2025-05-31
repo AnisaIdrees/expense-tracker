@@ -2,7 +2,8 @@ import { initializeApp } from "firebase/app";
 import { 
     getAuth,
     createUserWithEmailAndPassword ,
-    signInWithEmailAndPassword 
+    signInWithEmailAndPassword ,
+    onAuthStateChanged
 
  } from "firebase/auth";
 
@@ -21,6 +22,7 @@ const auth = getAuth(app);
 
 export{
     auth,
+    onAuthStateChanged,
     createUserWithEmailAndPassword ,
     signInWithEmailAndPassword 
 }
