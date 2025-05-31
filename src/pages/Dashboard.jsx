@@ -18,7 +18,7 @@ function Dashboard() {
 <div className=" bg-aqua-900 graph-container flex justify-center items-center gap-3 flex-wrap p-3">
  <BarChart/>
  <BarChart/>
-
+hbjs
 </div>
  
       </div>
