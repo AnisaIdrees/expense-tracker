@@ -15,10 +15,10 @@ function Dashboard() {
           <Card text={"Expense"} number={0.0} />
         </div>
 
-<div className=" bg-aqua-900 graph-container flex justify-center items-center gap-3 flex-wrap p-3">
+<div className="graph-container flex justify-center items-center gap-3 flex-wrap p-3">
  <BarChart/>
  <BarChart/>
-hbjs
+
 </div>
  
       </div>

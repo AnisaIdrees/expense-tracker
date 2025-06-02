@@ -3,9 +3,16 @@ import {
     getAuth,
     createUserWithEmailAndPassword ,
     signInWithEmailAndPassword ,
-    onAuthStateChanged
+    onAuthStateChanged,
+    signOut,
 
  } from "firebase/auth";
+import { getFirestore,
+  
+  doc,
+  setDoc,
+ } from "firebase/firestore";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4g-E_ZSSnatWH0zcH-6RP-lKSt9ZAqt4",
@@ -19,10 +26,15 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db =getFirestore(app)
 
 export{
     auth,
     onAuthStateChanged,
     createUserWithEmailAndPassword ,
-    signInWithEmailAndPassword 
+    signInWithEmailAndPassword ,
+    db,
+    doc,
+    setDoc,
+    signOut,
 }
