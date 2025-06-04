@@ -1,13 +1,18 @@
 import React from "react";
 import Routes from "./routing/Routes";
 import "./App.css";
-import { AuthProvider} from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
+import IncomeContextProvider from "./context/IncomeContext";
 
 function App() {
   return (
+
     <AuthProvider>
-      <Routes />
+      <IncomeContextProvider>
+        <Routes />
+      </IncomeContextProvider>
     </AuthProvider>
+    
   );
 }
 
