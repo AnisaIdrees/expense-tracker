@@ -1,15 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useAuth } from '../context/AuthContext'
+
+
 
 function AddIncome() {
+  const { currentUser } = useAuth()
+
+  const [incomeForm, setIncomeForm] = useState({
+
+    amount: '',
+    category: '',
+    date: '',
+
+  })
+
+  const handleChange = (e) => {
+
+    setIncomeForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    })
+  
+  )
+
+  }
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault()
+  }
+
+
   return (
     <div className='p-9'>AddIncome
 
+      <form onSubmit={handleSubmit}>
+        <input type="number"
+        className='text-[black]'
+         placeholder='amount'
+         onChange={handleChange}
+         name='amount'
+         value={incomeForm.amount} />
+         
+         <br /><br /><br /><br />
 
-      <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <input type="text"
+         placeholder='category'
+         onChange={handleChange}
+         value={incomeForm.category}
+         name='category' />
 
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </a>
+
+        <button type='submit'>Add income</button>
+      </form>
 
     </div>
 
