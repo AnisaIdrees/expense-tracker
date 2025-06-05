@@ -12,9 +12,9 @@ function IncomeContextProvider({ children }) {
 
   useEffect(() => {
 
-    setIncome(addIncome)
+    // setIncome(addIncome)
 
-  }, [currentUser])
+  },[currentUser])
 
   return (
     <>

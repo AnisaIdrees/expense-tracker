@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../context/AuthContext";
 
 
+
 function SideBar() {
   const {currentUser} = useAuth()  
   const [isOpen, setIsOpen] = useState(false);
