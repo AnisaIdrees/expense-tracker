@@ -49,7 +49,7 @@ function AddIncome() {
       setIncomeForm({ amount: "", category: "", date: "" });
 
     } catch (error) {
-       toast.error(`Error: ${error.message}`);
+      toast.error(`Error: ${error.message}`);
     }
     console.log(incomeForm);
   }
@@ -136,7 +136,7 @@ function AddIncome() {
           Add Income
         </button>
       </form>
-       <ToastContainer position="top-center" theme="dark" />
+      <ToastContainer position="top-center" theme="dark" />
     </div>
   )
 }

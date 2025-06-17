@@ -15,12 +15,12 @@ function Dashboard() {
           <Card text={"Expense"} number={0.0} />
         </div>
 
-<div className="graph-container flex justify-center items-center gap-3 flex-wrap p-3">
- <BarChart/>
- <BarChart/>
+        <div className="graph-container flex justify-center items-center gap-3 flex-wrap p-3">
+          <BarChart />
+          <BarChart />
 
-</div>
- 
+        </div>
+
       </div>
     </>
   );
