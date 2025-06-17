@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { addIncome } from '../services/IncomeService'
 import { FaRupeeSign, FaCalendarAlt, FaTags } from 'react-icons/fa';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddIncome() {
   const { currentUser } = useAuth()
@@ -42,55 +43,21 @@ function AddIncome() {
 
     try {
       await addIncome(incomeData);
+      toast.success('Income added');
       console.log("Income added!");
 
       setIncomeForm({ amount: "", category: "", date: "" });
 
     } catch (error) {
-      console.error("Error adding income:", error);
+       toast.error(`Error: ${error.message}`);
     }
     console.log(incomeForm);
   }
 
 
   return (
-    // <div className='p-9'>AddIncome
 
-    //   <form onSubmit={handleSubmit}>
-    //     <input type="number"
-    //       className='text-[black]'
-    //       placeholder='amount'
-    //       onChange={handleChange}
-    //       name='amount'
-    //       required
-    //       value={incomeForm.amount} />
-
-    //     <br /><br /><br /><br />
-
-    //     <input type="text"
-    //       className='text-[black]'
-    //       placeholder='category'
-    //       onChange={handleChange}
-    //       value={incomeForm.category}
-    //       name='category'
-    //       required />
-
-
-    //     <br /><br /><br /><br />
-
-    //     <input type="date"
-    //       className='text-[black]'
-    //       placeholder='m/dd/yy'
-    //       required
-    //       onChange={handleChange}
-    //       value={incomeForm.date}
-    //       name='date' />
-
-    //     <button type='submit'>Add income</button>
-    //   </form>
-
-    // </div>
-    <div className="max-w-md mx-auto p-6 mt-10 bg-[#303232] rounded-xl shadow-lg">
+    <div className=" max-w-[600px] mx-auto m-6 p-6 mt-10 bg-[#303232] rounded-xl shadow-lg">
       <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-white to-aqua-400 bg-clip-text text-transparent">
         Add Income
       </h2>
@@ -169,6 +136,7 @@ function AddIncome() {
           Add Income
         </button>
       </form>
+       <ToastContainer position="top-center" theme="dark" />
     </div>
   )
 }

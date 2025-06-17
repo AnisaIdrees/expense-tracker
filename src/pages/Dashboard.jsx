@@ -11,7 +11,7 @@ function Dashboard() {
 
         <div className="balance-box w-[100%]  mx-auto flex justify-center items-center gap-8 p-3 mt-4 flex-wrap">
           <Card text={"Current Balance"} number={0.0} />
-          <Card text={"Total Balance"} number={0.0} />
+          <Card text={"Total Income"} number={0.0} />
           <Card text={"Expense"} number={0.0} />
         </div>
 
